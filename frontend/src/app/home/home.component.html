@@ -1,0 +1,15 @@
+<main *ngFor="let note of notes">
+  <h1>{{ note.title }}</h1>
+  <p>
+    {{ note.description }}
+  </p>
+
+  <div>
+    <span *ngFor="let tag of note.tag">{{ tag }}</span>
+  </div>
+
+  <div class="action-buttons">
+    <button>edit</button>
+    <button>delete</button>
+  </div>
+</main>

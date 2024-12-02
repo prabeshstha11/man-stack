@@ -1,0 +1,44 @@
+main {
+  margin: 1rem;
+  padding: 1rem;
+  background-color: rgb(142, 68, 239);
+  color: #fff;
+  border-radius: 0.75rem;
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 0.75rem;
+    opacity: 70%;
+  }
+
+  .action-buttons {
+    justify-content: end;
+  }
+
+  div {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+
+    span {
+      font-size: 0.75rem;
+      background: #fff;
+      color: rgb(142 68 239);
+      padding: 0.1rem 0.5rem;
+      border-radius: 0.75rem;
+    }
+
+    button {
+      background-color: #fff;
+      color: rgb(142 68 239);
+      outline: none;
+      border: none;
+      padding: 0.5rem;
+      border-radius: 1rem;
+      cursor: pointer;
+    }
+  }
+}
