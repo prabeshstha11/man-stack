@@ -1,20 +1,32 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-note',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './create-note.component.html',
   styleUrl: './create-note.component.scss',
 })
 export class CreateNoteComponent {
-  constructor(private router: Router) {}
+  title: string = '';
+  description: string = '';
+  tag: string = '';
 
-  navigateToHome() {
-    // get the title, description, tags and add to the database
+  constructor(private router: Router, private http: HttpClient) {}
 
-    // call localhost:3000/note and then perform a post request
+  addNote() {
+    const note = {
+      title: this.title,
+      description: this.description,
+      tag: this.tag.split(',').map((t) => t.trim()),
+    };
+
+    this.http.post('http://localhost:3000/note', note).subscribe((response) => {
+      console.log('Note added successfully: ', response);
+    });
 
     this.router.navigate(['/']);
   }

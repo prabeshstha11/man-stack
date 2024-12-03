@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { firstValueFrom } from 'rxjs';
 import { CommonModule } from '@angular/common';
+import { response } from 'express';
 
 @Component({
   selector: 'app-home',
@@ -27,5 +28,22 @@ export class HomeComponent {
 
   ngOnInit(): void {
     this.fetchNotes();
+  }
+
+  deleteNote(id: string): void {
+    const url = `http://localhost:3000/note/${id}`;
+    console.log(url);
+
+    this.http.delete(url).subscribe({
+      next: (response) => {
+        console.log('Note deleted successfully: ', response);
+
+        this.notes = this.notes.filter((note) => note._id !== id);
+      },
+    });
+  }
+
+  editNote(id: string) {
+    console.log(id);
   }
 }

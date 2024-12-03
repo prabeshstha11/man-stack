@@ -1,15 +1,21 @@
-<main *ngFor="let note of notes">
-  <h1>{{ note.title }}</h1>
-  <p>
-    {{ note.description }}
-  </p>
+<div *ngIf="notes && notes.length > 0; else noNotes">
+  <main *ngFor="let note of notes">
+    <h1>{{ note.title }}</h1>
+    <p>
+      {{ note.description }}
+    </p>
 
-  <div>
-    <span *ngFor="let tag of note.tag">{{ tag }}</span>
-  </div>
+    <div>
+      <span *ngFor="let tag of note.tag">{{ tag }}</span>
+    </div>
 
-  <div class="action-buttons">
-    <button>edit</button>
-    <button>delete</button>
-  </div>
-</main>
+    <div class="action-buttons">
+      <button>edit</button>
+      <button (click)="deleteNote(note._id)">delete</button>
+    </div>
+  </main>
+</div>
+
+<ng-template #noNotes>
+  <div id="no-notes">No Notes</div>
+</ng-template>

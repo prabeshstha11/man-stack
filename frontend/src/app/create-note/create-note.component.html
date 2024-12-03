@@ -1,18 +1,28 @@
 <main>
   <div>
     <label for="title"></label>
-    <input type="text" id="title" placeholder="Title" />
+    <input type="text" id="title" placeholder="Title" [(ngModel)]="title" />
   </div>
 
   <div>
     <label for="description"></label>
-    <textarea type="text" id="description" placeholder="Description"></textarea>
+    <textarea
+      type="text"
+      id="description"
+      placeholder="Description"
+      [(ngModel)]="description"
+    ></textarea>
   </div>
 
   <div>
     <label for="tag"></label>
-    <input type="text" id="tag" placeholder="Tags separated by commas..." />
+    <input
+      type="text"
+      id="tag"
+      placeholder="Tags separated by commas..."
+      [(ngModel)]="tag"
+    />
   </div>
 
-  <button (click)="navigateToHome()">Add Note</button>
+  <button (click)="addNote()">Add Note</button>
 </main>
