@@ -47,10 +47,10 @@ ng serve
 
 ### **Note Entity**
 
-| Field | Type | Description | Example |  
-|------------|----------|---------------------------------|------------------------------| |  
-| `title` | `string` | Title of the note | `Meeting Notes` |  
-| `description` | `string` | Content of the note | `Discuss project timelines.` |  
-| `tag`| `string[]` | Categories of the note | `office, personal` |
+| Field         | Type       | Description            | Example                      |
+| ------------- | ---------- | ---------------------- | ---------------------------- |
+| `title`       | `string`   | Title of the note      | `Meeting Notes`              |
+| `description` | `string`   | Content of the note    | `Discuss project timelines.` |
+| `tag`         | `string[]` | Categories of the note | `office, personal`           |
 
 ---
