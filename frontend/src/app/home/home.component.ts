@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { firstValueFrom } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { response } from 'express';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +15,7 @@ import { response } from 'express';
 export class HomeComponent {
   notes: any[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   async fetchNotes() {
     const apiUrl = 'http://localhost:3000/note';
@@ -44,6 +45,8 @@ export class HomeComponent {
   }
 
   editNote(id: string) {
-    console.log(id);
+    const url = `/edit/${id}`;
+    this.router.navigate([url]);
+    // console.log(url);
   }
 }
